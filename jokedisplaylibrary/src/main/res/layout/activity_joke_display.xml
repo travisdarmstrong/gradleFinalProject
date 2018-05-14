@@ -8,8 +8,12 @@
 
     <TextView
         android:id="@+id/joke_display_text"
-        android:textSize="18sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/joke_display_padding"
+        android:textSize="@dimen/joke_display_textsize"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

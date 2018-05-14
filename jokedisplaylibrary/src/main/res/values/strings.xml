@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">JokeDisplayLibrary</string>
+    <string name="error_no_joke">An error ocurred retrieving your joke. We apologize for the inconvenience. Please try again.</string>
+
 </resources>

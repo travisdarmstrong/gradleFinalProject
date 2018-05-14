@@ -5,8 +5,6 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 import com.randomrobotics.jokesourcelibrary.JokeRepository;
 
-import javax.inject.Named;
-
 /** An endpoint class we are exposing */
 @Api(
         name = "myApi",
@@ -19,21 +17,13 @@ import javax.inject.Named;
 )
 public class MyEndpoint {
 
-    /** A simple endpoint method that takes a name and says Hi back */
-    @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
-        MyBean response = new MyBean();
-        response.setData("Hello, " + name + ". I hate you");
+     private JokeRepository jokeRepository = new JokeRepository();
 
-        return response;
-    }
-
-    JokeRepository jokeRepository = new JokeRepository();
-
-
+    /**
+     * Get a joke from the joke repository
+     */
     @ApiMethod(name="getJoke")
     public MyBean getJoke(){
-
         MyBean response = new MyBean();
         response.setData(jokeRepository.GetJoke());
         return response;
